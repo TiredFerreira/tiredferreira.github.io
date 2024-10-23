@@ -1,1 +1,436 @@
-i have no idea of what i am doiiiing
+<!DOCTYPE html>
+<html>
+<head>
+    <title>i'm just a fish</title>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ 
+    <link rel="shortcut icon" href="{favicon}">
+ 
+    <!-- fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600;1,700;1,800&family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+ 
+    <!-- normalize -->
+    <link href="https://necolas.github.io/normalize.css/7.0.0/normalize.css" rel="stylesheet">
+    
+<style>
+ 
+:root {
+    --background:#68404b;
+    --boxes-background:#fff;
+    --color-square:#a66454;
+    --text:#333;
+    --links: #a14259;
+    --links-hover:  #f93665;
+    --borders:#bbb;
+    --icons: #36608c;
+    --accent: #a14259;
+}
+ 
+::-webkit-scrollbar-thumb:vertical {border-left:2px solid var(--accent);}
+::-webkit-scrollbar {width:6px}
+::-webkit-scrollbar-track-piece{margin:15px 0;}
+ 
+pre {font-family:consolas;
+    white-space: pre-wrap;       /* css-3 */
+    white-space: -moz-pre-wrap;  /* Mozilla, since 1999 */
+    white-space: -pre-wrap;      /* Opera 4- */
+    white-space: -o-pre-wrap;    /* Opera 7 */
+    word-wrap: break-word;}      /* Internet Explorer 5.5+ */
+* {margin: 0;padding: 0;box-sizing: border-box;}
+p {margin: 1rem 0;}
+body, figure{margin:0;padding:0;box-sizing: border-box;}
+html{font: 14px 'Karla', sans-serif;}
+body {font-size:14px;color:var(--text);background:var(--background);letter-spacing: .03rem;line-height: 120%;}
+a {text-decoration: none;color:var(--links);word-break:break-word;}
+a:hover {color:var(--links-hover);}
+blockquote {margin:0;padding:0;}
+img {max-width:100%;height: auto;display: block;margin:0}
+hr {border:0;border-top:1px solid var(--borders);margin:0;}
+nav ul,nav li {list-style-type:none;margin:0;padding:0;}
+ 
+#color-square {
+    background-color: var(--color-square);
+    max-width: 70vh;
+    width: 40rem;
+    max-height: 70vh;
+    height: 40rem;
+    position: fixed;
+    inset: auto 0 0 auto;
+    z-index: -1;
+}
+ 
+/* containers */
+ 
+#flex-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100vh;
+    flex-direction: column;
+}
+ 
+/* sidebar */
+ 
+aside {
+    width: 35rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    overflow: auto;
+    padding: 2rem 0;
+}
+ 
+.about-icon {
+    width: 4rem;
+    height: 4rem;
+    border-radius: 100%;
+    object-fit: cover;
+    margin-bottom: 1rem;
+}
+ 
+img.about-icon {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+ 
+h1 {
+    text-align: center;
+    transform: rotate(180deg);
+    writing-mode:vertical-rl;
+    font: 600 2rem 'montserrat', sans-serif;
+    letter-spacing: .2rem;
+}
+ 
+h1:after {
+    content: '';
+    width: 3px;
+    height: 3rem;
+    background-color: var(--accent);
+    position: absolute;
+    top: -1rem;left:-2rem;
+}
+ 
+#sidebar-navigation {
+    width: 100%;
+    font-size: .9rem;
+    text-align: center;
+    margin-top: 3rem;
+    padding:1rem 1.5rem;
+    border-top: 1px solid var(--borders);
+}
+ 
+#sidebar-navigation li {
+    margin:4rem 0 0;
+    position: relative;
+    letter-spacing: .05rem;
+}
+#sidebar-navigation li:first-of-type {margin-top: 1.5rem;}
+ 
+#sidebar-navigation li:after {
+    content: '';
+    width: 1.9rem;
+    height: 1px;
+    background-color: var(--borders);
+    position: absolute;
+    inset: -2rem 0 auto auto;
+}
+ 
+#sidebar-navigation li:first-of-type:after {display: none;}
+ 
+/* main */
+ 
+main {
+    display: flex;
+    width:90%;
+    max-width: 65rem;
+    height: 80%;
+    max-height: 40rem;
+    box-sizing: border-box;
+    padding-right: 3rem;
+    background-color: var(--boxes-background);
+}
+ 
+#main-content {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 80%;
+    max-height: 40rem;
+}
+ 
+/*  navigation  */  
+ 
+#main-navigation {
+    width: 100%;
+    height: 6rem;
+    padding: 0 2rem;
+    letter-spacing: .03rem;
+}
+ 
+#main-navigation ul {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+ 
+#main-navigation li {margin-left: 5rem;}
+ 
+.nav-icon {width: 17px;}
+ 
+/* main content */
+ 
+#main-content {
+    height: calc(100% - 6rem);
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+}
+ 
+/* about text */
+ 
+#about {
+    width: 50%;
+    height: 90%;
+    margin:0 auto;
+    padding: 0;
+    overflow: auto;
+}
+ 
+/* about details */
+ 
+#about-details {
+    list-style: none;
+    margin-bottom: 2rem;
+}
+ 
+#about-details li {
+    position: relative;
+    margin:1rem 0;
+    padding-left: 1.5rem;
+}
+#about-details li:before {
+    content: '';
+    position: absolute;
+    top:7px;left:0;
+    width: 1rem;
+    height: 1px;
+    background-color: var(--accent);
+}
+ 
+/* about image */
+ 
+figure.about-image {
+    height: 100%;
+    width: 40%;
+}
+ 
+img.about-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+ 
+/* MEDIA */
+ 
+@media only screen and (min-width:0px) and (max-width:750px) {
+ 
+    /* containers */
+ 
+    #flex-container {
+        display: block;
+        width: 90%;
+        height: 100%;
+        margin: 5rem auto;
+    }
+ 
+    /* sidebar */
+ 
+    aside {
+        width: 100%;
+        display: block;
+        padding: 2rem;
+    }
+ 
+    .about-icon {
+        width: 6rem;
+        height: 6rem;
+        margin: 0 auto 2rem;
+    }
+ 
+    img.about-icon {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+ 
+    h1 {
+        transform: rotate(0);
+        writing-mode:horizontal-tb;
+        margin:0 0 4rem
+    }
+ 
+    h1:after {display: none;}
+    
+    h1 span {position: relative;}
+ 
+    h1 span:after {
+        content: '';
+        width: 30%;
+        height: 3px;
+        background-color: var(--color-square);
+        position: absolute;
+        inset: auto 0 -1rem auto;
+    }
+ 
+    #sidebar-navigation {
+        width: 100%;
+        border: 0;
+        margin: 0;
+        padding:0;
+    }
+ 
+    #sidebar-navigation li {
+        margin: 0 1.5rem 0;
+        display: inline-block;
+        padding-bottom: .5rem;
+    }
+    #sidebar-navigation li:first-of-type {margin-top: 0;}
+ 
+    #sidebar-navigation li:after {
+        content: '';
+        width: 1.3rem;
+        height: 1px;
+        inset: auto 7px -.1rem auto;
+    }
+ 
+    #sidebar-navigation li:first-of-type:after {display: block;}
+ 
+    /* main content */
+  
+    main {
+        display: block;
+        max-width: 65rem;
+        width:100%;
+        height: 100%;
+        max-height: 100%;
+        padding-right: 0;
+    }
+ 
+    #main-content {
+        width: 100%;
+        flex-direction: column;
+        height: 100%;
+        max-height: 100%;
+    }
+ 
+    #main-navigation {
+        height: 100%;
+        padding: 2rem;
+    }
+ 
+    #about {
+        width: 100%;
+        order: 2;
+        padding: 2rem 3rem;
+    }
+    
+    figure.about-image {
+        width: 100%;
+        height: 15rem;
+    }
+ 
+    img.about-image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+}
+ 
+</style>
+</head>
+<body>
+ 
+<!-- change the color of the background square in the css variable --color-square -->
+<div id="color-square"></div>
+ 
+<section id="flex-container"><main>
+ 
+    <aside>
+ 
+        <!-- icon image -->
+ 
+        <figure class="about-icon"><img class="about-icon" src="https://files.catbox.moe/r871eu.gif" alt=""></figure>
+ 
+        <!-- page title, keep it between <span></span> preferably not too long-->
+ 
+        <h1><span>felina.fish</span></h1>
+ 
+        <!-- sidebar links -->
+ 
+        <nav id="sidebar-navigation"><ul>
+            <li><a href="https://bsky.app/profile/felina.fish">bsky</a></li>
+            <li><a href="https://nyaa.si/user/t3dio">nyaa</a></li>
+            <li><a href="https://www.twitch.tv/tedioferreira">twtv</a></li>
+        </ul></nav>
+    </aside>
+ 
+    <section id="main-inside">
+ 
+        <!-- topbar navigation -->
+    
+        <nav id="main-navigation"><ul>
+            
+            <li><a href="https://files.catbox.moe/56non7.webp"><i class="nav-icon" data-feather="heart"></i></a></li>
+            
+            <li><a href="https://files.catbox.moe/52rlqi.mp4"><i class="nav-icon" data-feather="star"></i></a></li>
+            
+            <li><a href="https://youtu.be/triNvj1cSQ0"><i class=" nav-icon" data-feather="plus"></i></a></li>
+            
+        </ul></nav>
+ 
+        <div id="main-content">
+ 
+            <article id="about">
+ 
+                <!-- details in the about -->
+                <ul id="about-details">
+                    
+                    <li>giulia</li>
+                    <li>24</li>
+                    <li>i have no idea what i am doing</li>
+                    <li>tropical fish 🇧🇷</li>
+                </ul>
+                
+                <!-- all your lines between <p>example</p> -->
+ 
+                <p>Puellae eandem viam lesbium sequi poterunt. Puellae pulchrae sunt, me timidum et beatum faciunt, virginem osculari volo... oh deus meus, egone hilaris??</p>
+ 
+ 
+                <p><video width="390" height="190" loop controls muted src="https://files.catbox.moe/filpjl.mp4" autoplay="0" ></video></p>
+ 
+            </article>
+ 
+            <!-- about image -->
+            <figure class="about-image"><img class="about-image" src="https://files.catbox.moe/tkzbyj.jpg" alt=""></figure>
+ 
+        </div>
+ 
+    </section>
+ 
+</main></section> <!-- flex/main -->
+ 
+ 
+<script src="https://unpkg.com/feather-icons@4.29.1/dist/feather.min.js"></script>
+ 
+<script>
+    feather.replace();
+</script>
+</body>
+</html>
